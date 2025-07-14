@@ -21,7 +21,7 @@ public class CourseController {
     private final CourseMapper courseMapper;
 
     @GetMapping
-    @PreAuthorize("hasRole('ADMIN')")
+    @PreAuthorize("hasRole('USER')")
     public ResponseEntity<List<CourseDTO>> getAllCourses() {
         List<Course> courses = courseService.findAll();
         List<CourseDTO> courseDTOs = courses.stream()
